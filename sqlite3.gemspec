@@ -18,10 +18,9 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = ">= 1.3.6"
 
   s.add_dependency "ffi", ">= 0.6.3"
-  s.add_development_dependency "test-unit", ">= 2.0"
-  s.add_development_dependency "activerecord", ">= 2.3.5"
-
-  s.required_ruby_version = ">= 1.9.1"
+  s.add_development_dependency "rspec", ">= 2.4.0"
+  s.add_development_dependency "activerecord", ">= 3.0.0"
+  s.add_development_dependency "activesupport", ">= 3.0.0"
 
   s.files = Dir.glob("{lib}/**/*") + %w(LICENSE README.rdoc)
 
