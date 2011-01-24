@@ -2,8 +2,7 @@ $:.unshift File.expand_path("../lib", __FILE__)
 
 require "rubygems"
 require "rubygems/specification"
-require "rake/testtask"
-require "rake/rdoctask"
+require "rspec/core/rake_task"
 require "rake/gempackagetask"
 require "sqlite3"
 
@@ -12,17 +11,7 @@ def gemspec
   eval(File.read(file), binding, file)
 end
 
-Rake::TestTask.new(:test) do |test|
-  test.libs << "lib" << "test"
-  test.pattern = "test/**/test_*.rb"
-  test.verbose = true
-end
-
-Rake::RDocTask.new do |rdoc|
-  rdoc.rdoc_dir = "rdoc"
-  rdoc.title = "sqlite3 #{SQLite3::VERSION}"
-  rdoc.rdoc_files.include("README.rdoc")
-  rdoc.rdoc_files.include("lib/**/*.rb")
+RSpec::Core::RakeTask.new do |t|
 end
 
 Rake::GemPackageTask.new(gemspec) do |pkg|
