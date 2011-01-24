@@ -9,11 +9,11 @@ module SQLite3
         def encoding; $KCODE; end
       end
 
-      ASCII_8BIT = "N"
-      US_ASCII = "N"
-      UTF_8 = "U"
-      UTF_16BE = "N"
-      UTF_16LE = "N"
+      ASCII_8BIT = "NONE"
+      US_ASCII = "NONE"
+      UTF_8 = "UTF-8"
+      UTF_16BE = "not supported on #{RUBY_VERSION}"
+      UTF_16LE = UTF_16BE
       ::Encoding = Encoding
     end
 
